@@ -7,7 +7,7 @@ class HeaderApp extends React.Component {
             <header className='App-header'>
                 <img src={logo} className='App-logo' alt='logo' />
                 <p>
-                    Edit <code>src/App.js</code> and save to reload.
+                    Class Work 
                 </p>
                 <a
                     className='App-link'
