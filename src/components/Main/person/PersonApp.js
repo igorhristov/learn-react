@@ -6,7 +6,7 @@ class MainApp extends React.Component {
         super(props);
 
         this.state = {
-            person: [{ firstName: '', lastName: '', age: '' }],
+            person: { firstName: '', lastName: '', age: '' },
             persons: [
                 { firstName: 'Gandalf', lastName: 'White', age: '1500' },
                 { firstName: 'John', lastName: 'Doe', age: '56' },
