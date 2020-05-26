@@ -24,7 +24,7 @@ class MainApp extends React.Component {
         const persons =
             !person.ix && person.ix !== 0
                 ? [...this.state.persons, person] // new person
-                : this.state.persons.map((p, ix) => (ix === person.ix ? person : p)) // update existing
+                : this.state.persons.map((p, ix) => (ix === person.ix ? person : p)); // update existing
 
         this.setState({
             person: {
@@ -35,16 +35,6 @@ class MainApp extends React.Component {
             persons,
         });
     }
-    /*  
-    handleFirstName(firstName) {
-        this.setState({
-            person: {
-                ...this.state.person,
-                firstName,
-            },
-        });
-    }
-    */
 
     handlePersonChange(prop, val) {
         this.setState({
@@ -69,64 +59,71 @@ class MainApp extends React.Component {
         this.setState({
             person: {
                 ...this.state.persons[ix],
-                ix
-            }
-        })
+                ix,
+            },
+        });
     }
 
     render() {
         return (
-            <div className='App-person'>
-                <form onSubmit={this.handleSubmit} className='mb-3'>
-                    <div className='form-group'>
-                        <input
-                            onChange={(e) => this.handlePersonChange('firstName', e.target.value)}
-                            value={this.state.person.firstName}
-                            className='form-control'
-                            type='text'
-                            name='firstName'
-                        />
-                        <input
-                            onChange={(e) => this.handlePersonChange('lastName', e.target.value)}
-                            value={this.state.person.lastName}
-                            className='form-control'
-                            type='text'
-                            name='lastName'
-                        />
-                        <input
-                            onChange={(e) => this.handlePersonChange('age', e.target.value)}
-                            value={this.state.person.age}
-                            className='form-control'
-                            type='number'
-                            name='age'
-                        />
-                        <hr className='w-100 h-3' />
-                    </div>
+            <div className='container-fluid'>
+                <div className='App-person'>
+                    <form onSubmit={this.handleSubmit} className='mb-3'>
+                        <div className='form-group'>
+                            <input
+                                onChange={(e) =>
+                                    this.handlePersonChange('firstName', e.target.value)
+                                }
+                                value={this.state.person.firstName}
+                                className='form-control'
+                                type='text'
+                                name='firstName'
+                            />
+                            <input
+                                onChange={(e) =>
+                                    this.handlePersonChange('lastName', e.target.value)
+                                }
+                                value={this.state.person.lastName}
+                                className='form-control'
+                                type='text'
+                                name='lastName'
+                            />
+                            <input
+                                onChange={(e) => this.handlePersonChange('age', e.target.value)}
+                                value={this.state.person.age}
+                                className='form-control'
+                                type='number'
+                                name='age'
+                            />
+                            <hr className='w-100 h-3' />
+                        </div>
 
-                    <button type='submit' className='btn btn-primary'>
-                        {!this.state.person.ix && this.state.person.ix !== 0
-                            ? 'Create New Person'
-                            : 'Update Person'}
-                    </button>
-                </form>
+                        <button type='submit' className='btn btn-primary'>
+                            {!this.state.person.ix && this.state.person.ix !== 0
+                                ? 'Create New Person'
+                                : 'Update Person'}
+                        </button>
+                    </form>
 
-                {this.state.persons.map(({ firstName, lastName, age }, ix) => (
-                    <div className='mb-2' key={firstName + lastName + age}>
-                        <Person firstName={firstName} lastName={lastName} age={age} />
-                        <button
-                            onClick={() => this.handleDeletePerson(ix)}
-                            className='btn btn-danger'
-                        >
-                            Delete
-                        </button>
-                        <button
-                            onClick={() => this.handleEditPerson(ix)}
-                            className='btn btn-warning ml-3'
-                        >
-                            Edit
-                        </button>
-                    </div>
-                ))}
+                    {this.state.persons.map(({ firstName, lastName, age }, ix) => (
+                        <div className='mb-2' key={firstName + lastName + age}>
+                            <Person
+                                firstName={firstName}
+                                lastName={lastName}
+                                age={age}
+                                onClick={() => this.handleDeletePerson(ix)
+                                }
+                            />
+
+                            <button
+                                onClick={() => this.handleEditPerson(ix)}
+                                className='btn btn-warning ml-3'
+                            >
+                                Edit
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }
