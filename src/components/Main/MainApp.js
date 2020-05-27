@@ -1,6 +1,6 @@
 import React from 'react';
 import PersonApp from './person/PersonApp';
-import Tutorial from './tutorial/App';
+import Game from './tictactoe/Game';
 
 class MainApp extends React.Component {
     render() {
@@ -9,7 +9,10 @@ class MainApp extends React.Component {
                 
                 <h2>Main</h2>
                 <PersonApp />
-                <Tutorial/>
+
+                <h2>Tic Tac Toe Game</h2>
+                <Game/>
+                
             </main>
         );
     }
