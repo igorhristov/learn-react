@@ -136,8 +136,10 @@ class MainApp extends React.Component {
                                 firstName={firstName}
                                 lastName={lastName}
                                 age={age}
-                                onClick={() => this.handleDeletePerson(ix)}
-                                onClick={() => this.handleEditPerson(ix)}
+                                handleEditPerson={() => this.handleEditPerson(ix)}
+                                
+                                handleDeletePerson={() => this.handleDeletePerson(ix)}
+
                             />
                         </div>
                     ))}
