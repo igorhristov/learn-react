@@ -1,5 +1,6 @@
 import React from 'react';
 import Person from './Person';
+import Button from './Button';
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -67,42 +68,66 @@ class MainApp extends React.Component {
     render() {
         return (
             <div className='container-fluid'>
-                <div className='App-person'>
-                    <form onSubmit={this.handleSubmit} className='mb-3'>
-                        <div className='form-group'>
-                            <input
-                                onChange={(e) =>
-                                    this.handlePersonChange('firstName', e.target.value)
-                                }
-                                value={this.state.person.firstName}
-                                className='form-control'
-                                type='text'
-                                name='firstName'
-                            />
-                            <input
-                                onChange={(e) =>
-                                    this.handlePersonChange('lastName', e.target.value)
-                                }
-                                value={this.state.person.lastName}
-                                className='form-control'
-                                type='text'
-                                name='lastName'
-                            />
-                            <input
-                                onChange={(e) => this.handlePersonChange('age', e.target.value)}
-                                value={this.state.person.age}
-                                className='form-control'
-                                type='number'
-                                name='age'
-                            />
-                            <hr className='w-100 h-3' />
+                <div className='App-person text-center'>
+                    <form onSubmit={this.handleSubmit} className='mb-3 mr-sm-5'>
+                        <div className='form-group row align-items-center'>
+                            <label for='firstName' class='col-sm-3 col-form-label text-sm-right'>
+                                First Name:
+                            </label>
+                            <div className='col-sm-9'>
+                                <input
+                                    onChange={(e) =>
+                                        this.handlePersonChange('firstName', e.target.value)
+                                    }
+                                    value={this.state.person.firstName}
+                                    className='form-control'
+                                    type='text'
+                                    name='firstName'
+                                />
+                            </div>
                         </div>
 
-                        <button type='submit' className='btn btn-primary'>
-                            {!this.state.person.ix && this.state.person.ix !== 0
-                                ? 'Create New Person'
-                                : 'Update Person'}
-                        </button>
+                        <div className='form-group row align-items-center'>
+                            <label for='lastName' class='col-sm-3 col-form-label text-sm-right'>
+                                Last Name:
+                            </label>
+                            <div className='col-sm-9'>
+                                <input
+                                    onChange={(e) =>
+                                        this.handlePersonChange('lastName', e.target.value)
+                                    }
+                                    value={this.state.person.lastName}
+                                    className='form-control'
+                                    type='text'
+                                    name='lastName'
+                                />
+                            </div>
+                        </div>
+
+                        <div className='form-group row align-items-center'>
+                            <label for='Age' class='col-sm-3 col-form-label text-sm-right'>
+                                Age:
+                            </label>
+                            <div className='col-sm-9'>
+                                <input
+                                    onChange={(e) => this.handlePersonChange('age', e.target.value)}
+                                    value={this.state.person.age}
+                                    className='form-control'
+                                    type='number'
+                                    name='age'
+                                />
+                            </div>
+                        </div>
+
+                        <div className='text-sm-right'>
+                            <button type='submit' className='btn btn-primary'>
+                                {!this.state.person.ix && this.state.person.ix !== 0
+                                    ? 'Create New Person'
+                                    : 'Update Person'}
+                            </button>
+                        </div>
+
+                        <hr className='w-100 h-3' />
                     </form>
 
                     {this.state.persons.map(({ firstName, lastName, age }, ix) => (
@@ -111,16 +136,9 @@ class MainApp extends React.Component {
                                 firstName={firstName}
                                 lastName={lastName}
                                 age={age}
-                                onClick={() => this.handleDeletePerson(ix)
-                                }
-                            />
-
-                            <button
+                                onClick={() => this.handleDeletePerson(ix)}
                                 onClick={() => this.handleEditPerson(ix)}
-                                className='btn btn-warning ml-3'
-                            >
-                                Edit
-                            </button>
+                            />
                         </div>
                     ))}
                 </div>
