@@ -1,27 +1,9 @@
 import React from 'react';
 
-class Button extends React.Component {
+const Button = ({ cssclass, onClick, value }) => (
+    <button className={cssclass} onClick={onClick}>
+        {value}
+    </button>
+);
 
-    render() {
-        return (
-            <button
-                className={this.props.classname}
-                onClick={() => this.props.onClick()}
-            >
-                {this.props.value}
-            </button>
-        );
-    }
-}
-
-// function Button(props) {
-//     return (
-//         <button className='btn btn-primary' onClick={props.onClick}>
-//             {props.value}
-//         </button>
-//     );
-// }
-
-
-  
 export default Button;

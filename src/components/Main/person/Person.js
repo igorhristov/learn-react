@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Button from './Button';
 
 class Person extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className='container-fluid'>
@@ -15,20 +11,18 @@ class Person extends Component {
                     </div>
 
                     <div className='col-5'>
-                    <Button
-                        classname='btn btn-lg btn-warning'
-                        value='Edit'
-                        onClick={() => this.props.handleEditPerson()}
-                    />
+                        <Button
+                            cssclass='btn btn-lg btn-warning'
+                            value='Edit'
+                            onClick={() => this.props.handleEditPerson()}
+                        />
 
-
-                    <Button
-                        classname='btn btn-lg btn-danger mx-2'
-                        value='X'
-                        onClick={() => this.props.handleDeletePerson()}
-                    />
+                        <Button
+                            cssclass='btn btn-lg btn-danger mx-2'
+                            value='X'
+                            onClick={() => this.props.handleDeletePerson()}
+                        />
                     </div>
-
                 </div>
             </div>
         );
