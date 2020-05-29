@@ -1,6 +1,7 @@
 import React from 'react';
 import Person from './Person';
 import FormComponent from './Form';
+import PersonData from './data';
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -8,11 +9,7 @@ class MainApp extends React.Component {
 
         this.state = {
             person: { firstName: '', lastName: '', age: '' },
-            persons: [
-                { firstName: 'Gandalf', lastName: 'White', age: '1500' },
-                { firstName: 'John', lastName: 'Doe', age: '56' },
-                { firstName: 'Alex', lastName: 'Malex', age: '666' },
-            ],
+            persons: PersonData,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
