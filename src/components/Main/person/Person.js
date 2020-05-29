@@ -10,21 +10,25 @@ class Person extends Component {
         return (
             <div className='container-fluid'>
                 <div className='row'>
-                    <div className='col-8'>
+                    <div className='col-7'>
                         {this.props.firstName} {this.props.lastName}, age: {this.props.age}
                     </div>
 
+                    <div className='col-5'>
                     <Button
                         classname='btn btn-lg btn-warning'
                         value='Edit'
                         onClick={() => this.props.handleEditPerson()}
                     />
 
+
                     <Button
                         classname='btn btn-lg btn-danger mx-2'
                         value='X'
                         onClick={() => this.props.handleDeletePerson()}
                     />
+                    </div>
+
                 </div>
             </div>
         );
