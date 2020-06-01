@@ -66,7 +66,6 @@ class Calculator extends Component {
                                 <button
                                     className='col-4 btn btn-secondary font-weight-bold border border-dark btn-lg'
                                     onClick={() => this.handleNumberClick(number)}
-                                    onKeyPress={() => this.handleNumberKeyPress(number)}
                                     key={ix}
                                 >
                                     {number}
@@ -81,7 +80,6 @@ class Calculator extends Component {
                                     className='col-12 btn btn-danger font-weight-bold border border-dark btn-lg'
                                     key={ix}
                                     onClick={() => this.handleOperatorClick(operator)}
-                                    onKeyPress={() => this.handleOperatorClick(operator)}
                                 >
                                     {operator}
                                 </button>
