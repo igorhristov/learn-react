@@ -16,9 +16,13 @@ class Kalkulator extends Component {
         document.addEventListener('keydown', this.handleClick);
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleClick);
+    }
+
     handleReset() {
         this.setState({
-            result: 0,
+            result: '',
         });
     }
 

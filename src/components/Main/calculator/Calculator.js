@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as math from 'mathjs';
 
 class Calculator extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             result: 0,
