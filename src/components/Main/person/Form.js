@@ -1,12 +1,11 @@
 import React from 'react';
 
 class FormComponent extends React.Component {
-    
     render() {
         return (
             <form onSubmit={this.props.handleSubmit} className='mb-3 mr-sm-5'>
                 <div className='form-group row align-items-center'>
-                    <label for='firstName' class='col-sm-3 col-form-label text-sm-right'>
+                    <label htmlFor='firstName' className='col-sm-3 col-form-label text-sm-right'>
                         First Name:
                     </label>
                     <div className='col-sm-9'>
@@ -20,7 +19,7 @@ class FormComponent extends React.Component {
                 </div>
 
                 <div className='form-group row align-items-center'>
-                    <label for='lastName' class='col-sm-3 col-form-label text-sm-right'>
+                    <label htmlFor='lastName' className='col-sm-3 col-form-label text-sm-right'>
                         Last Name:
                     </label>
                     <div className='col-sm-9'>
@@ -33,7 +32,7 @@ class FormComponent extends React.Component {
                     </div>
                 </div>
                 <div className='form-group row align-items-center'>
-                    <label for='Age' class='col-sm-3 col-form-label text-sm-right'>
+                    <label htmlFor='Age' className='col-sm-3 col-form-label text-sm-right'>
                         Age:
                     </label>
                     <div className='col-sm-9'>

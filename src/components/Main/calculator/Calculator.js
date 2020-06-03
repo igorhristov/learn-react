@@ -32,7 +32,7 @@ class Calculator extends Component {
         if (operator === '=') {
             !['+', '-', '*', '/', '.'].includes(this.state.equations.slice(-1))
                 ? this.setState({ result: math.evaluate(this.state.equations), equations: '' })
-                : (this.state.result = 0);
+                : this.setState({result:  0});
         } else if (this.state.equations.slice(-1) === '.') {
             this.setState({ equations: this.state.equations });
         } else if (operator) {

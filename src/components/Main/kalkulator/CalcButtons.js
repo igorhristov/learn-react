@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css'
+import './style.css';
 
 class CalcButtons extends React.Component {
     render() {
@@ -67,7 +67,10 @@ class CalcButtons extends React.Component {
                         <button name='.' onClick={e => this.props.handleClick(e.target.name)}>
                             .
                         </button>
-                        <button name='Backspace' onClick={e => this.props.handleClick(e.target.name)}>
+                        <button
+                            name='Backspace'
+                            onClick={e => this.props.handleClick(e.target.name)}
+                        >
                             &larr;
                         </button>
                         <button name='=' onClick={e => this.props.handleClick(e.target.name)}>

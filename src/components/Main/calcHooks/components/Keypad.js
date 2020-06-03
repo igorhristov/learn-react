@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Key from './Key';
 const keys = [
     {
@@ -72,11 +72,39 @@ const keys = [
     },
 ];
 
-const Keypad = () => {
+const Keypad = ({ handleKey }) => {
+    useEffect(() => {
+        const keyPressHandler = e => {
+            e.preventDefault();
+
+            switch (e.key) {
+                case '/':
+                    handleKey('÷');
+                    break;
+                case '*':
+                    handleKey('×');
+                    break;
+
+                case 'Enter':
+                    handleKey('=');
+                    break;
+
+                default:
+                    handleKey(e.key);
+                    break;
+            }
+        };
+
+        window.addEventListener('keypress', keyPressHandler);
+        return () => {
+            window.removeEventListener('keypress', keyPressHandler);
+        };
+    });
+
     return (
         <div className='keypad'>
             {keys.map(({ label, ...props }) => {
-                return <Key key={label} label={label} {...props} />;
+                return <Key key={label} label={label} {...props} handleKey={handleKey} />;
             })}
         </div>
     );

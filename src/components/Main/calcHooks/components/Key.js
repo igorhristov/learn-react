@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Key = ({ label, type }) => {
+const Key = ({ label, type, handleKey }) => {
     const cls =
         'key' + type === 'function'
             ? 'key-function'
@@ -10,7 +10,7 @@ const Key = ({ label, type }) => {
             ? 'key-0'
             : '';
     return (
-        <button className={'key ' + cls} type='button'>
+        <button className={'key ' + cls} onClick={() => handleKey(label)} type='button'>
             {label}
         </button>
     );
